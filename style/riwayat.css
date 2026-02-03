@@ -1,0 +1,111 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar Style (Tetap Sesuai Permintaan) */
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #007bff !important;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+    font-weight: 600;
+}
+
+.btn-logout {
+    color: #dc3545 !important;
+    background-color: #fff5f5;
+    border-radius: 8px;
+}
+
+.btn-logout:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* Custom Card Style (Ganti Tabel) */
+.card-aspirasi {
+    border: none;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.card-aspirasi:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-aspirasi-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Status Badge Styling */
+.badge-status {
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-menunggu {
+    background-color: #fff7e6;
+    color: #d48806;
+    border: 1px solid #ffe7ba;
+}
+
+.status-proses {
+    background-color: #e6f7ff;
+    color: #096dd9;
+    border: 1px solid #bae7ff;
+}
+
+.status-selesai {
+    background-color: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.location-tag {
+    font-size: 0.85rem;
+    color: #666;
+    background: #f8f9fa;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.feedback-box {
+    background: #f4f6ff;
+    border-left: 4px solid #007bff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}

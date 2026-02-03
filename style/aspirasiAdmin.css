@@ -1,0 +1,20 @@
+/* Ini untuk halaman admin/aspirasi_list.php */
+.main-sidebar {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+}
+
+.aspirasi-card {
+    transition: .2s;
+    border-radius: 10px;
+}
+
+.aspirasi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .1);
+}
+
+@media (max-width:576px) {
+    .content-wrapper {
+        padding: 10px !important;
+    }
+}

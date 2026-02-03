@@ -1,0 +1,93 @@
+/* ini untuk halaman index.css */
+:root {
+    --primary-color: #0061f2;
+    --secondary-color: #6900f2;
+    --text-dark: #2d3436;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* ================= HERO (DIPENDEKKAN) ================= */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 60px 0;
+    color: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    clip-path: ellipse(140% 95% at 50% 0%);
+}
+
+.hero-section h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.btn-cta {
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 700;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: #f8f9fa;
+    color: var(--secondary-color);
+}
+
+/* ================= STAT CARD ================= */
+.stat-card {
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+}
+
+.stat-icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+/* ================= TABLE ================= */
+.card-table {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.badge-custom {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}

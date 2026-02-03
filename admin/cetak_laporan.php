@@ -2,62 +2,66 @@
 include '../config/koneksi.php';
 session_start();
 if ($_SESSION['role'] != 'admin') { header("Location: ../login.php"); }
+
+// Opsional: Fungsi untuk format tanggal Indonesia
+function tgl_indo($tanggal){
+    $bulan = array (1 => 'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+    $pecahkan = explode('-', $tanggal);
+    return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Laporan Pengaduan Sarana</title>
-    <style>
-        body { font-family: sans-serif; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #000; padding: 8px; text-align: left; }
-        .text-center { text-align: center; }
-        .header { border-bottom: 3px double #000; padding-bottom: 10px; }
-    </style>
+    <meta charset="UTF-8">
+    <title>Laporan Pengadua Sapras <?= date('d-m-Y') ?></title>
+    <link rel="stylesheet" href="/style/laporan.css">
 </head>
 <body onload="window.print()">
-    <div class="header text-center">
+
+    <div class="header">
         <h2>LAPORAN PENGADUAN SARANA DAN PRASARANA</h2>
         <p>SMK AL-IRSYAD TEGAL</p>
-        <hr>
+        <p>Jl. Gajah Mada No.123, Kota Tegal, Jawa Tengah</p>
     </div>
 
     <table>
         <thead>
             <tr>
-                <th>No</th>
-                <th>Tanggal</th>
-                <th>Pelapor (NIS)</th>
-                <th>Kategori</th>
-                <th>Lokasi</th>
+                <th width="5%">No</th>
+                <th width="12%">Tanggal</th>
+                <th width="10%">NIS</th>
+                <th width="15%">Kategori</th>
+                <th width="15%">Lokasi</th>
                 <th>Keterangan</th>
-                <th>Status</th>
+                <th width="10%">Status</th>
             </tr>
         </thead>
         <tbody>
             <?php
             $no = 1;
-            $res = mysqli_query($conn, "SELECT a.*, k.keterangan_kategori FROM aspirasi a JOIN kategori k ON a.id_kategori = k.id_kategori");
+            $res = mysqli_query($conn, "SELECT a.*, k.keterangan_kategori FROM aspirasi a JOIN kategori k ON a.id_kategori = k.id_kategori ORDER BY a.tanggal_pelaporan DESC");
             while($d = mysqli_fetch_array($res)){
             ?>
             <tr>
-                <td><?= $no++ ?></td>
-                <td><?= $d['tanggal_pelaporan'] ?></td>
+                <td style="text-align: center;"><?= $no++ ?></td>
+                <td><?= date('d/m/Y', strtotime($d['tanggal_pelaporan'])) ?></td>
                 <td><?= $d['nis'] ?></td>
                 <td><?= $d['keterangan_kategori'] ?></td>
                 <td><?= $d['lokasi'] ?></td>
                 <td><?= $d['keterangan'] ?></td>
-                <td><?= strtoupper($d['status']) ?></td>
+                <td style="text-align: center;"><strong><?= strtoupper($d['status']) ?></strong></td>
             </tr>
             <?php } ?>
         </tbody>
     </table>
 
-    <div style="margin-top: 30px; float: right; text-align: center;">
-        <p>Tegal, <?= date('d F Y') ?></p>
+    <div class="footer-sign">
+        <p>Tegal, <?= tgl_indo(date('Y-m-d')) ?></p>
         <p>Mengetahui, <br>Admin Sarpras</p>
-        <br><br>
-        <p><strong>( ........................... )</strong></p>
+        <br><br><br>
+        <p><strong>( ..................................... )</strong></p>
     </div>
+
 </body>
 </html>

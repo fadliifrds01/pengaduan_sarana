@@ -1,0 +1,84 @@
+/* Ini untuk halaman admin/cetak_laporan.php */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 12pt;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px double #000;
+    padding-bottom: 10px;
+}
+
+.header h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 18pt;
+}
+
+.header p {
+    margin: 5px 0;
+    font-size: 11pt;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #000;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 10pt;
+}
+
+table th {
+    background-color: #f2f2f2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-align: center;
+}
+
+
+/* Tanda Tangan */
+.footer-sign {
+    margin-top: 50px;
+    float: right;
+    width: 250px;
+    text-align: center;
+}
+
+/* Pengaturan Cetak */
+@media print {
+    @page {
+        size: landscape;
+        margin: 1.5cm;
+    }
+
+    /* Rekomendasi landscape untuk tabel lebar */
+    body {
+        padding: 0;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    /* Class untuk menyembunyikan elemen saat cetak */
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+}

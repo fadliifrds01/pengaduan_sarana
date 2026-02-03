@@ -1,0 +1,20 @@
+/* Ini untuk halaman register.php */
+body {
+    background: #f4f6f9;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: #4e73df;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+}

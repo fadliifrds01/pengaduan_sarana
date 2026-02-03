@@ -1,0 +1,19 @@
+/* Ini untuk halaman admin/siswa_add.php */
+.main-sidebar {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+}
+
+.card {
+    border-radius: 10px;
+}
+
+@media(max-width:576px) {
+    .content-wrapper {
+        padding: 10px !important;
+    }
+
+    .table td,
+    .table th {
+        font-size: 13px;
+    }
+}
