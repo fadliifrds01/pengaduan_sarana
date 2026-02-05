@@ -83,8 +83,8 @@ $nis_user = $_SESSION['user'];
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <div>
                                     <div class="small text-muted mb-1">
-                                        <i class="far fa-calendar-alt me-1"></i> <?= date('d M Y', strtotime($d['tanggal_pelaporan'])) ?> 
-                                        <span class="mx-2">|</span> 
+                                        <i class="far fa-calendar-alt me-1"></i> <?= date('d M Y', strtotime($d['tanggal_pelaporan'])) ?>
+                                        <span class="mx-2">|</span>
                                         <i class="far fa-clock me-1"></i> <?= date('H:i', strtotime($d['tanggal_pelaporan'])) ?> WIB
                                     </div>
                                     <div class="location-tag mt-2">
@@ -92,7 +92,7 @@ $nis_user = $_SESSION['user'];
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="content-text mb-3">
                                 <h6 class="fw-bold small text-uppercase mb-2 text-secondary">Isi Laporan:</h6>
                                 <p class="mb-0"><?= nl2br($d['keterangan']) ?></p>
